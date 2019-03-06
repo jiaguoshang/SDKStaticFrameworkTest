@@ -1,0 +1,6 @@
+framework module SDKStaticFrameworkDemo {
+  umbrella header "SDKStaticFrameworkDemo.h"
+
+  export *
+  module * { export * }
+}
