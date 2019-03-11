@@ -15,6 +15,7 @@
 		534F5E95222E84EC00A7BB0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 534F5E94222E84EC00A7BB0F /* main.m */; };
 		534F5EA3222E86FB00A7BB0F /* SDKDemoBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 534F5EA1222E86FB00A7BB0F /* SDKDemoBundle.bundle */; };
 		536CCF31222FE3F100850749 /* SDKStaticFrameworkDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 536CCF30222FE3F100850749 /* SDKStaticFrameworkDemo.framework */; };
+		E421F23D4A34426163D2849D /* libPods-SDKStaticFrameworkTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5605161D50FC8DB292A7FC9D /* libPods-SDKStaticFrameworkTest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,9 @@
 		534F5E94222E84EC00A7BB0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		534F5EA1222E86FB00A7BB0F /* SDKDemoBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SDKDemoBundle.bundle; sourceTree = "<group>"; };
 		536CCF30222FE3F100850749 /* SDKStaticFrameworkDemo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDKStaticFrameworkDemo.framework; sourceTree = "<group>"; };
+		5605161D50FC8DB292A7FC9D /* libPods-SDKStaticFrameworkTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SDKStaticFrameworkTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9401DD6872EF0E21625784C0 /* Pods-SDKStaticFrameworkTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKStaticFrameworkTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDKStaticFrameworkTest/Pods-SDKStaticFrameworkTest.release.xcconfig"; sourceTree = "<group>"; };
+		ECBFCC11A895FCA1C0149C86 /* Pods-SDKStaticFrameworkTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKStaticFrameworkTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDKStaticFrameworkTest/Pods-SDKStaticFrameworkTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,12 +42,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				536CCF31222FE3F100850749 /* SDKStaticFrameworkDemo.framework in Frameworks */,
+				E421F23D4A34426163D2849D /* libPods-SDKStaticFrameworkTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E422E3A569629BA52067E7A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ECBFCC11A895FCA1C0149C86 /* Pods-SDKStaticFrameworkTest.debug.xcconfig */,
+				9401DD6872EF0E21625784C0 /* Pods-SDKStaticFrameworkTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		534F5E79222E84E900A7BB0F = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +65,8 @@
 				534F5EA1222E86FB00A7BB0F /* SDKDemoBundle.bundle */,
 				534F5E84222E84E900A7BB0F /* SDKStaticFrameworkTest */,
 				534F5E83222E84E900A7BB0F /* Products */,
+				2E422E3A569629BA52067E7A /* Pods */,
+				960942E02583DC5D3CE04F1A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +94,14 @@
 			path = SDKStaticFrameworkTest;
 			sourceTree = "<group>";
 		};
+		960942E02583DC5D3CE04F1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5605161D50FC8DB292A7FC9D /* libPods-SDKStaticFrameworkTest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,6 +109,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 534F5E98222E84EC00A7BB0F /* Build configuration list for PBXNativeTarget "SDKStaticFrameworkTest" */;
 			buildPhases = (
+				AD956C804741412713F0F41E /* [CP] Check Pods Manifest.lock */,
 				534F5E7E222E84E900A7BB0F /* Sources */,
 				534F5E7F222E84E900A7BB0F /* Frameworks */,
 				534F5E80222E84E900A7BB0F /* Resources */,
@@ -143,6 +168,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AD956C804741412713F0F41E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SDKStaticFrameworkTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		534F5E7E222E84E900A7BB0F /* Sources */ = {
@@ -291,6 +337,7 @@
 		};
 		534F5E99222E84EC00A7BB0F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECBFCC11A895FCA1C0149C86 /* Pods-SDKStaticFrameworkTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +350,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = BitInfo.SDKStaticFrameworkTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -312,6 +363,7 @@
 		};
 		534F5E9A222E84EC00A7BB0F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9401DD6872EF0E21625784C0 /* Pods-SDKStaticFrameworkTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -324,6 +376,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = BitInfo.SDKStaticFrameworkTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
